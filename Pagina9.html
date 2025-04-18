@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiConnect: Conclusión</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 112, 240, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%);
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 40px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #64748b;
+            max-width: 800px;
+            text-align: center;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+        .summary-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1050px;
+            margin-bottom: 50px;
+        }
+        .summary-card {
+            width: 30%;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .summary-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+        .summary-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: white;
+        }
+        .blue-gradient {
+            background: linear-gradient(135deg, #0070f0 0%, #0090ff 100%);
+        }
+        .green-gradient {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+        }
+        .purple-gradient {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+        .summary-title {
+            font-weight: 700;
+            font-size: 20px;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+        .summary-desc {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        .cta-container {
+            background: linear-gradient(135deg, #0070f0 0%, #22c55e 100%);
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 1050px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .cta-content {
+            max-width: 60%;
+        }
+        .cta-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .cta-desc {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+        }
+        .cta-button {
+            background: white;
+            color: #0070f0;
+            border-radius: 30px;
+            padding: 14px 30px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .cta-button i {
+            margin-right: 8px;
+        }
+        .contact-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #64748b;
+            font-size: 16px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 16px;
+        }
+        .footer-link {
+            display: flex;
+            align-items: center;
+            color: #0070f0;
+        }
+        .footer-link i {
+            margin-right: 8px;
+        }
+        .decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="gradient-bg"></div>
+        <div class="content">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-handshake"></i> ServiConnect
+                </div>
+                <h1 class="title">Transformando el Futuro de los Servicios Profesionales</h1>
+                <p class="subtitle">
+                    Una plataforma innovadora que conecta clientes con profesionales cualificados de manera segura, eficiente y transparente
+                </p>
+            </div>
+            
+            <div class="main-content">
+                <div class="summary-container">
+                    <div class="summary-card">
+                        <div class="summary-icon blue-gradient">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="summary-title">Confianza y Seguridad</div>
+                        <div class="summary-desc">
+                            Verificación avanzada de profesionales, pagos seguros y garantía de satisfacción en cada servicio contratado.
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon green-gradient">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="summary-title">Crecimiento Escalable</div>
+                        <div class="summary-desc">
+                            Arquitectura técnica diseñada para expandirse rápidamente a nuevas ciudades, países y categorías de servicios.
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon purple-gradient">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="summary-title">Modelo Rentable</div>
+                        <div class="summary-desc">
+                            Múltiples fuentes de ingresos con comisiones por servicio, opciones premium y oportunidades de afiliación.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-container">
+                    <div class="cta-content">
+                        <div class="cta-title">¿Listo para revolucionar el sector de servicios?</div>
+                        <div class="cta-desc">
+                            ServiConnect está preparada para convertirse en el referente de contratación de servicios profesionales. Desarrollada con los más altos estándares de seguridad, usabilidad y escalabilidad para transformar la industria.
+                        </div>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="#" class="cta-button">
+                            <i class="fas fa-paper-plane"></i> Solicitar Demo
+                        </a>
+                        <a href="#" class="cta-button contact-button">
+                            <i class="fas fa-phone-alt"></i> Contactar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <div>ServiConnect © 2023 - Todos los derechos reservados</div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-envelope"></i> info@serviconnect.com
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-globe"></i> www.serviconnect.com
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-phone"></i> +34 91 123 45 67
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="decoration"></div>
+    </div>
+</body>
+</html>
