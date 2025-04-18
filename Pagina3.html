@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiConnect: Flujos de Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 112, 240, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%);
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 28px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .flows-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            flex: 1;
+        }
+        .flow {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .flow-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .flow-title-client {
+            color: #0070f0;
+        }
+        .flow-title-pro {
+            color: #22c55e;
+        }
+        .flow-title-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            color: white;
+        }
+        .client-icon {
+            background: #0070f0;
+        }
+        .pro-icon {
+            background: #22c55e;
+        }
+        .flow-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        .flow-steps::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e5e7eb;
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+        .step {
+            width: 170px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+        }
+        .client-step .step-icon {
+            color: #0070f0;
+            border: 2px solid #0070f0;
+        }
+        .pro-step .step-icon {
+            color: #22c55e;
+            border: 2px solid #22c55e;
+        }
+        .step-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .step-desc {
+            font-size: 14px;
+            color: #64748b;
+            text-align: center;
+        }
+        .client-step .step-title {
+            color: #0070f0;
+        }
+        .pro-step .step-title {
+            color: #22c55e;
+        }
+        .decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="gradient-bg"></div>
+        <div class="content">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-handshake"></i> ServiConnect
+                </div>
+                <h1 class="title">Flujos de Usuario</h1>
+            </div>
+            
+            <div class="flows-container">
+                <!-- Client Flow -->
+                <div class="flow">
+                    <h2 class="flow-title flow-title-client">
+                        <div class="flow-title-icon client-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        Flujo del Cliente
+                    </h2>
+                    
+                    <div class="flow-steps">
+                        <div class="step client-step">
+                            <div class="step-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="step-title">Búsqueda</div>
+                            <div class="step-desc">Busca servicios por categoría, ubicación y filtros</div>
+                        </div>
+                        
+                        <div class="step client-step">
+                            <div class="step-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="step-title">Selección</div>
+                            <div class="step-desc">Revisa perfiles, valoraciones y precios</div>
+                        </div>
+                        
+                        <div class="step client-step">
+                            <div class="step-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="step-title">Contacto</div>
+                            <div class="step-desc">Chat con el profesional para detalles específicos</div>
+                        </div>
+                        
+                        <div class="step client-step">
+                            <div class="step-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="step-title">Reserva</div>
+                            <div class="step-desc">Agenda fecha y horario para el servicio</div>
+                        </div>
+                        
+                        <div class="step client-step">
+                            <div class="step-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="step-title">Pago</div>
+                            <div class="step-desc">Pago seguro a través de la plataforma</div>
+                        </div>
+                        
+                        <div class="step client-step">
+                            <div class="step-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="step-title">Valoración</div>
+                            <div class="step-desc">Califica y deja opiniones sobre el servicio</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Flow -->
+                <div class="flow">
+                    <h2 class="flow-title flow-title-pro">
+                        <div class="flow-title-icon pro-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        Flujo del Profesional
+                    </h2>
+                    
+                    <div class="flow-steps">
+                        <div class="step pro-step">
+                            <div class="step-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="step-title">Registro</div>
+                            <div class="step-desc">Completa el registro y verificación de identidad</div>
+                        </div>
+                        
+                        <div class="step pro-step">
+                            <div class="step-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <div class="step-title">Perfil</div>
+                            <div class="step-desc">Crea perfil detallado con servicios y tarifas</div>
+                        </div>
+                        
+                        <div class="step pro-step">
+                            <div class="step-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="step-title">Solicitudes</div>
+                            <div class="step-desc">Recibe notificaciones de posibles clientes</div>
+                        </div>
+                        
+                        <div class="step pro-step">
+                            <div class="step-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="step-title">Aceptación</div>
+                            <div class="step-desc">Confirma reservas y agenda los servicios</div>
+                        </div>
+                        
+                        <div class="step pro-step">
+                            <div class="step-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="step-title">Servicio</div>
+                            <div class="step-desc">Realiza el trabajo acordado con el cliente</div>
+                        </div>
+                        
+                        <div class="step pro-step">
+                            <div class="step-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div class="step-title">Cobro</div>
+                            <div class="step-desc">Recibe el pago descontada la comisión</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="decoration"></div>
+    </div>
+</body>
+</html>
