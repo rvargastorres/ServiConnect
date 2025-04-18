@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiConnect: Visión General y Objetivos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 112, 240, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%);
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 28px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+        .left-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+        .right-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #0070f0;
+        }
+        .description {
+            font-size: 18px;
+            color: #4b5563;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .objective-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .objective-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+        .objective-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0070f0 0%, #22c55e 100%);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        .objective-icon i {
+            color: white;
+            font-size: 24px;
+        }
+        .objective-text {
+            font-size: 16px;
+            color: #1e293b;
+        }
+        .value-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .value-icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #0070f0 0%, #22c55e 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .value-icon i {
+            color: white;
+            font-size: 14px;
+        }
+        .value-text {
+            font-size: 16px;
+            color: #4b5563;
+        }
+        .decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="gradient-bg"></div>
+        <div class="content">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-handshake"></i> ServiConnect
+                </div>
+                <h1 class="title">Visión General y Objetivos</h1>
+            </div>
+            
+            <div class="main-content">
+                <div class="left-content">
+                    <h2 class="section-title">¿Qué es ServiConnect?</h2>
+                    <p class="description">
+                        ServiConnect es una plataforma web que actúa como marketplace de servicios profesionales, conectando de manera eficiente a clientes con profesionales independientes y pequeñas empresas de diversos sectores (fontanería, electricidad, mecánica, asesoría legal, nutrición, entre otros).
+                    </p>
+                    
+                    <h2 class="section-title">Objetivos Principales</h2>
+                    
+                    <div class="objective-card">
+                        <div class="objective-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="objective-text">
+                            Facilitar la conexión directa entre clientes y profesionales cualificados
+                        </div>
+                    </div>
+                    
+                    <div class="objective-card">
+                        <div class="objective-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="objective-text">
+                            Simplificar la búsqueda y contratación de servicios profesionales
+                        </div>
+                    </div>
+                    
+                    <div class="objective-card">
+                        <div class="objective-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="objective-text">
+                            Garantizar confianza mediante verificación de profesionales y sistema de reseñas
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-content">
+                    <h2 class="section-title">Propuesta de Valor</h2>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="value-text">
+                            Experiencia fluida y tecnológica similar a Uber para servicios profesionales
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="value-text">
+                            Sistema de pago seguro con retención de comisiones (modelo escrow)
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="value-text">
+                            Comunicación directa entre clientes y profesionales antes de contratar
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="value-text">
+                            Verificación de identidad y credenciales profesionales
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="value-text">
+                            Sistema de reputación basado en reseñas genuinas de clientes
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="value-text">
+                            Plataforma escalable y preparada para expansión internacional
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="decoration"></div>
+    </div>
+</body>
+</html>
