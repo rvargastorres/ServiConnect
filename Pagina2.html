@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiConnect: Arquitectura Técnica</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 112, 240, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%);
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 28px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .diagram-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+        .architecture-diagram {
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            margin-top: 20px;
+        }
+        .layer {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .layer::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, #0070f0 0%, #22c55e 100%);
+            transform: translateX(-50%);
+        }
+        .layer:last-child::after {
+            display: none;
+        }
+        .layer-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-right: 30px;
+            width: 160px;
+            text-align: right;
+        }
+        .layer-components {
+            display: flex;
+            flex: 1;
+            gap: 16px;
+        }
+        .component {
+            background: white;
+            padding: 14px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .component-icon {
+            margin-right: 8px;
+            color: #0070f0;
+        }
+        .client-layer {
+            background: linear-gradient(90deg, rgba(0, 112, 240, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%);
+        }
+        .frontend-layer {
+            background: linear-gradient(90deg, rgba(0, 112, 240, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%);
+        }
+        .backend-layer {
+            background: linear-gradient(90deg, rgba(0, 112, 240, 0.15) 0%, rgba(34, 197, 94, 0.15) 100%);
+        }
+        .data-layer {
+            background: linear-gradient(90deg, rgba(0, 112, 240, 0.2) 0%, rgba(34, 197, 94, 0.2) 100%);
+        }
+        .services-layer {
+            background: linear-gradient(90deg, rgba(0, 112, 240, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%);
+        }
+        .description {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 18px;
+            color: #4b5563;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="gradient-bg"></div>
+        <div class="content">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-handshake"></i> ServiConnect
+                </div>
+                <h1 class="title">Arquitectura Técnica</h1>
+            </div>
+            
+            <div class="diagram-container">
+                <div class="architecture-diagram">
+                    <!-- Client Layer -->
+                    <div class="layer client-layer">
+                        <div class="layer-title">Clientes</div>
+                        <div class="layer-components">
+                            <div class="component">
+                                <i class="fas fa-laptop component-icon"></i>
+                                Web Responsive
+                            </div>
+                            <div class="component">
+                                <i class="fas fa-mobile-alt component-icon"></i>
+                                Aplicación Móvil
+                            </div>
+                            <div class="component">
+                                <i class="fas fa-tablet-alt component-icon"></i>
+                                Tablet
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Frontend Layer -->
+                    <div class="layer frontend-layer">
+                        <div class="layer-title">Frontend</div>
+                        <div class="layer-components">
+                            <div class="component">
+                                <i class="fab fa-react component-icon"></i>
+                                React.js / Vue.js
+                            </div>
+                            <div class="component">
+                                <i class="fas fa-palette component-icon"></i>
+                                UI/UX Responsive
+                            </div>
+                            <div class="component">
+                                <i class="fas fa-map-marked-alt component-icon"></i>
+                                API Maps
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Backend Layer -->
+                    <div class="layer backend-layer">
+                        <div class="layer-title">Backend</div>
+                        <div class="layer-components">
+                            <div class="component">
+                                <i class="fas fa-server component-icon"></i>
+                                Node.js / Django
+                            </div>
+                            <div class="component">
+                                <i class="fas fa-sitemap component-icon"></i>
+                                API RESTful
+                            </div>
+                            <div class="component">
+                                <i class="fas fa-shield-alt component-icon"></i>
+                                Middleware Seguridad
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Layer -->
+                    <div class="layer data-layer">
+                        <div class="layer-title">Datos</div>
+                        <div class="layer-components">
+                            <div class="component">
+                                <i class="fas fa-database component-icon"></i>
+                                PostgreSQL / MongoDB
+                            </div>
+                            <div class="component">
+                                <i class="fas fa-cogs component-icon"></i>
+                                Caché (Redis)
+                            </div>
+                            <div class="component">
+                                <i class="fas fa-search component-icon"></i>
+                                Motor de Búsqueda
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- External Services Layer -->
+                    <div class="layer services-layer">
+                        <div class="layer-title">Servicios Externos</div>
+                        <div class="layer-components">
+                            <div class="component">
+                                <i class="fas fa-credit-card component-icon"></i>
+                                Procesador de Pagos
+                            </div>
+                            <div class="component">
+                                <i class="fas fa-bell component-icon"></i>
+                                Notificaciones
+                            </div>
+                            <div class="component">
+                                <i class="fas fa-id-card component-icon"></i>
+                                Verificación ID
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="description">
+                    La arquitectura de ServiConnect está diseñada con un enfoque modular y escalable, 
+                    permitiendo la integración fluida entre todos los componentes y garantizando 
+                    un alto rendimiento, seguridad y experiencia de usuario intuitiva.
+                </p>
+            </div>
+        </div>
+        <div class="decoration"></div>
+    </div>
+</body>
+</html>
