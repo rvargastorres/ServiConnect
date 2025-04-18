@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiConnect: Estrategia de Monetización</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 112, 240, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%);
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 28px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+        .revenue-overview {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 60px;
+        }
+        .revenue-chart {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 24px;
+        }
+        .revenue-model {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .revenue-header {
+            padding: 16px 24px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        .revenue-header i {
+            margin-right: 12px;
+        }
+        .revenue-body {
+            padding: 20px 24px;
+        }
+        .revenue-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .revenue-item:last-child {
+            margin-bottom: 0;
+        }
+        .revenue-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 16px;
+            flex-shrink: 0;
+            font-size: 20px;
+            color: white;
+        }
+        .blue-icon {
+            background: linear-gradient(135deg, #0070f0 0%, #0090ff 100%);
+        }
+        .green-icon {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+        }
+        .revenue-content {
+            flex: 1;
+        }
+        .revenue-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #1e293b;
+            margin-bottom: 2px;
+        }
+        .revenue-desc {
+            font-size: 14px;
+            color: #64748b;
+        }
+        .additional-revenue {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        .donut-chart {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            border-radius: 50%;
+            margin-bottom: 30px;
+            background: conic-gradient(
+                #0070f0 0% 60%,
+                #22c55e 60% 80%,
+                #f97316 80% 90%,
+                #8b5cf6 90% 100%
+            );
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        .donut-hole {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            background: white;
+            border-radius: 50%;
+            top: 20%;
+            left: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .donut-text {
+            font-weight: 700;
+            font-size: 24px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .donut-subtext {
+            font-size: 14px;
+            color: #64748b;
+        }
+        .chart-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+        .legend-blue {
+            background: #0070f0;
+        }
+        .legend-green {
+            background: #22c55e;
+        }
+        .legend-orange {
+            background: #f97316;
+        }
+        .legend-purple {
+            background: #8b5cf6;
+        }
+        .legend-text {
+            font-size: 14px;
+            color: #1e293b;
+        }
+        .legend-percent {
+            font-weight: 600;
+            margin-left: 4px;
+        }
+        .decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="gradient-bg"></div>
+        <div class="content">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-handshake"></i> ServiConnect
+                </div>
+                <h1 class="title">Estrategia de Monetización</h1>
+            </div>
+            
+            <div class="main-content">
+                <div class="revenue-overview">
+                    <h2 class="section-title">Fuentes de Ingresos</h2>
+                    
+                    <div class="revenue-model">
+                        <div class="revenue-header">
+                            <i class="fas fa-money-bill-wave"></i> Ingresos Principales
+                        </div>
+                        <div class="revenue-body">
+                            <div class="revenue-item">
+                                <div class="revenue-icon blue-icon">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <div class="revenue-content">
+                                    <div class="revenue-name">Comisiones por Servicio</div>
+                                    <div class="revenue-desc">5-15% del valor total del servicio, según la categoría y volumen</div>
+                                </div>
+                            </div>
+                            
+                            <div class="revenue-item">
+                                <div class="revenue-icon blue-icon">
+                                    <i class="fas fa-badge-check"></i>
+                                </div>
+                                <div class="revenue-content">
+                                    <div class="revenue-name">Perfiles Verificados Premium</div>
+                                    <div class="revenue-desc">Cuota mensual para profesionales que deseen obtener un sello de verificación avanzada</div>
+                                </div>
+                            </div>
+                            
+                            <div class="revenue-item">
+                                <div class="revenue-icon blue-icon">
+                                    <i class="fas fa-ad"></i>
+                                </div>
+                                <div class="revenue-content">
+                                    <div class="revenue-name">Posicionamiento Destacado</div>
+                                    <div class="revenue-desc">Pago para aparecer en los primeros resultados de búsqueda por categoría o ubicación</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="additional-revenue">
+                        <div class="revenue-header">
+                            <i class="fas fa-plus-circle"></i> Ingresos Adicionales
+                        </div>
+                        <div class="revenue-body">
+                            <div class="revenue-item">
+                                <div class="revenue-icon green-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="revenue-content">
+                                    <div class="revenue-name">Servicios de Marketing</div>
+                                    <div class="revenue-desc">Paquetes de promoción en redes sociales y email marketing</div>
+                                </div>
+                            </div>
+                            
+                            <div class="revenue-item">
+                                <div class="revenue-icon green-icon">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <div class="revenue-content">
+                                    <div class="revenue-name">Marketplace de Productos</div>
+                                    <div class="revenue-desc">Comisión por venta de herramientas y productos relacionados con los servicios</div>
+                                </div>
+                            </div>
+                            
+                            <div class="revenue-item">
+                                <div class="revenue-icon green-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="revenue-content">
+                                    <div class="revenue-name">Afiliaciones y Partnerships</div>
+                                    <div class="revenue-desc">Colaboraciones con marcas y servicios complementarios</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="revenue-chart">
+                    <div class="donut-chart">
+                        <div class="donut-hole">
+                            <div class="donut-text">Ingresos</div>
+                            <div class="donut-subtext">Distribución</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <div class="legend-color legend-blue"></div>
+                            <div class="legend-text">Comisiones <span class="legend-percent">60%</span></div>
+                        </div>
+                        
+                        <div class="legend-item">
+                            <div class="legend-color legend-green"></div>
+                            <div class="legend-text">Servicios Premium <span class="legend-percent">20%</span></div>
+                        </div>
+                        
+                        <div class="legend-item">
+                            <div class="legend-color legend-orange"></div>
+                            <div class="legend-text">Posicionamiento <span class="legend-percent">10%</span></div>
+                        </div>
+                        
+                        <div class="legend-item">
+                            <div class="legend-color legend-purple"></div>
+                            <div class="legend-text">Otros <span class="legend-percent">10%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="decoration"></div>
+    </div>
+</body>
+</html>
