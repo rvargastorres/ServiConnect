@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiConnect: Marketplace de Servicios Profesionales</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 112, 240, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%);
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+        }
+        .logo-container {
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 50px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        .title {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 28px;
+            color: #4b5563;
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 800px;
+        }
+        .icon-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .service-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #64748b;
+            transition: all 0.3s ease;
+        }
+        .service-icon i {
+            font-size: 32px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .service-icon span {
+            font-size: 16px;
+        }
+        .decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #0070f0 0%, #22c55e 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="gradient-bg"></div>
+        <div class="content">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-handshake"></i> ServiConnect
+                </div>
+            </div>
+            
+            <h1 class="title">Marketplace de Servicios Profesionales</h1>
+            
+            <p class="subtitle">Conectando clientes con profesionales independientes de manera rápida, segura y eficiente</p>
+            
+            <div class="icon-grid">
+                <div class="service-icon">
+                    <i class="fas fa-wrench"></i>
+                    <span>Fontanería</span>
+                </div>
+                <div class="service-icon">
+                    <i class="fas fa-bolt"></i>
+                    <span>Electricidad</span>
+                </div>
+                <div class="service-icon">
+                    <i class="fas fa-car"></i>
+                    <span>Mecánica</span>
+                </div>
+                <div class="service-icon">
+                    <i class="fas fa-gavel"></i>
+                    <span>Asesoría Legal</span>
+                </div>
+                <div class="service-icon">
+                    <i class="fas fa-apple-alt"></i>
+                    <span>Nutrición</span>
+                </div>
+                <div class="service-icon">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Y más...</span>
+                </div>
+            </div>
+        </div>
+        <div class="decoration"></div>
+    </div>
+</body>
+</html>
